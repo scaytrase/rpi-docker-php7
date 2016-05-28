@@ -13,6 +13,9 @@ RUN apt-get install nano apt-utils php7.0 php7.0-fpm php7.0-curl php7.0-fpm php7
 
 RUN sed -Ei 's/^listen.*/listen = 9000/' /etc/php/7.0/fpm/pool.d/www.conf
 
-RUN service php7.0-fpm restart
+RUN mkdir /run/php/
+RUN service php7.0-fpm stop
 
 EXPOSE 9000
+
+CMD ["php-fpm"]
