@@ -18,4 +18,4 @@ RUN service php7.0-fpm stop
 
 EXPOSE 9000
 
-CMD ["php-fpm"]
+CMD ["php-fpm7.0 -F"]
